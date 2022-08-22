@@ -1,6 +1,15 @@
-- name: Demo my first playbook
+- name: Demo my first playbook,Play1
   hosts: all
   tasks:
     - name: Print Hello
       ansible.builtin.debug:
         msg: Hello How are you PPK..!
+
+- name: Demo my first playbook,Play2
+  hosts: all
+  tasks:
+    - name: Print Hello
+      ansible.builtin.debug:
+        msg: Hello How are you PPK..!
+
+#ansible-playbook -i inv -u centos -k 1-sample.yml
