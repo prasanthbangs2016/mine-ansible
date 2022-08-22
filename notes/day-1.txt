@@ -1,0 +1,87 @@
+sudo yum install ansible -y
+sudo yum remove ansible -y
+
+
+#to install specific version
+pypi.org
+sudo pip install ansible==3.4.0
+ansible --version
+
+Inventory
+==========
+inventory file defines the hosts and groups of hosts 
+there are two types of inventory files: Static and Dynamic.
+
+vi inv
+host1
+host2
+192.168.100.0
+
+#to which all it connects using inv
+ansible -i inv all --list-hosts
+vi inv
+[HOSTS]
+host1
+host2
+[IP]
+192.168.100.0
+
+ansible -i inv all --list-hosts
+#to connect only to particular group
+ansible -i inv IP --list-hosts
+
+ansible installation
+======================
+
+sudo yum install python3-pip -y
+sudo pip3 install pip --upgrade
+sudo pip3 install ansible
+or
+sudo pip3 install ansible-core
+
+ansible --version
+
+
+ansible [core 2.11.12]
+  config file = None
+  configured module search path = ['/home/centos/.ansible/plugins/modules', '/usr/share/ansible/plugins/modules']
+  ansible python module location = /usr/local/lib/python3.6/site-packages/ansible
+  ansible collection location = /home/centos/.ansible/collections:/usr/share/ansible/collections
+  executable location = /usr/local/bin/ansible
+  python version = 3.6.8 (default, Nov 16 2020, 16:55:22) [GCC 4.8.5 20150623 (Red Hat 4.8.5-44)]
+  jinja version = 3.0.3
+  libyaml = True
+
+
+Ansible connections
+======================
+uses ssh in background
+
+ansible --help
+ansible -i inv all -u centos -k -m ansible.builtin.ping
+
+or
+ansible -i inv all -u centos -k -m ping
+
+k : meaning ask for the password
+
+
+o/p:
+172.31.12.127 | SUCCESS => {
+    "ansible_facts": {
+        "discovered_interpreter_python": "/usr/bin/python"
+    },
+    "changed": false,
+    "ping": "pong"
+}
+
+
+Note: This run is called adhoc command
+
+
+
+
+
+
+
+

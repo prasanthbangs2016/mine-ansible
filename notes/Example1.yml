@@ -1,0 +1,39 @@
+TrainerName  - Prashanth
+CourseName  - Devops
+Timings  - 6AM
+contact No's -
+    123,456
+content-
+    devops - ansible,shell,jenkins,docker,k8s
+    aws - ec2,r53
+
+
+KEY - VALUE
+KEY - VALUE(LIST)
+KEY - (MAP/DICT)
+  KEY - VALUE/VALUES
+
+
+Trainer: Prashanth
+CourseName: Devops
+Timings: 6AM
+contact: 
+#[123,456] or 
+  - 123
+  - 456
+#Map with list  
+content: { devops: [ ansible,shell,jenkins], aws: [ ec2,r53 ]}
+
+#or
+
+#Map with list
+content1:
+  devops:
+    - ansible
+    - shell
+    - jenkins
+  aws:
+    - ec2
+    - r53
+
+

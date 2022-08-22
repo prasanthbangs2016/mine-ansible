@@ -1,0 +1,95 @@
+inventory :  Ansible inventory files and organize servers into groups and subgroups
+==========
+we can keep either ip address or hostname
+
+group can be done either individual file based or environment or based on component and even together and that always depends
+upon the architecture design that projecthad.
+
+in environments like a cloud where the nodes are too dynamic and where your ip addresses always change frequently,we need to
+work on some dynamic inventory management.
+
+
+Ansible versions
+===============
+v1: it was having minimal things
+
+v2: 
+2.0
+major shift happened
+if u have created code in v2,it wont work in v1 and vice versa
+
+2.5
+generalized things
+
+2.9
+untill 2.9 it was called as module.
+
+2.10
+from 2.10 it is called as collections.
+made few more changes
+introduced collections(ex:aws,azure etc)
+
+what is collection : group of modules called as collections.
+
+vendor.name
+amazon.aws
+azure.azcollection
+
+ansible vs ansible core
+==========================
+ansible core : from redhat,from 2.10 they made seperation
+ansible: opensource
+
+ansible(Redhat)3===>comes with ansible core 2.10
+ansible(Redhat)4===>comes with ansible core 2.11
+ansible(Redhat)5===>comes with ansible core 2.12
+ansible(Redhat)6===>comes with ansible core 2.13
+
+
+Install 2.9 ansible version
+=======================
+yum list available | grep ansible
+yum install ansible -y
+
+or
+
+sudo pip3 install pip --upgrade
+
+sudo pip3 install ansible-core
+or
+sudo pip3 install ansible
+or
+sudo pip3 install ansible-core
+pip3 --version
+
+ansible --version
+o/p: ansible [core 2.11.12]
+
+note: ansible version has dependency support with python.
+
+vi inv
+[g1]
+ip1
+ip2
+[g2]
+ip3
+ip4
+
+ansible -i inv all --list-hosts
+ansible -i inv g1 --list-hosts
+ansible -i inv g2 --list-hosts
+
+ansible connections
+======================
+ssh
+
+ansible -i inv all -u centos -k -m ping
+ansible -i inv all -u centos -k -m ansible.default.ping
+
+
+
+
+
+
+
+
