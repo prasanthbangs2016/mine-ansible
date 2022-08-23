@@ -26,7 +26,7 @@ Q- facts?
 these are predefined variables
 
 Q-Runtime variables
-during the runtime you run a task u get the output that output we will be using it somewhere using "register" variable.
+during the runtime you run a task u get the output that output we will be using it somewhere using "register" variable we will print on screen
 
 if you want to define variable between the task that is possible using "set_fact".
 
