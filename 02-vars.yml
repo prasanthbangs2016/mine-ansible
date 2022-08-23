@@ -29,3 +29,11 @@
       vars:
         #var: value
         URL: task.example.com
+#note: task level variables are limited only to that particular task
+
+- name: Read the variable from inventory file
+  hosts: all
+  tasks:
+    - name: print URL
+      ansible.builtin.debug:
+        msg: URL == {{ URL }}
