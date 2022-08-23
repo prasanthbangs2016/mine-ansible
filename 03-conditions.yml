@@ -7,11 +7,15 @@
     - name: Run if it is redhat family
       ansible.builtin.debug:
         msg: Hello Redhat
+      #this is string way condition  
       #when: ansible_os_family == "RedHat"
-      when: redhat
+      #this is boolean comparision condition
+      #when: redhat
+      #both string and boolean comparision condition
+      when: redhat or ansible_os_family == "RedHat"
 
     - name: Run if it is debain family
       ansible.builtin.debug:
         msg: Hello Debian
       #when: ansible_os_family == "Debain"
-      when: debain
+      when: debain or ansible_os_family == "Debain"
