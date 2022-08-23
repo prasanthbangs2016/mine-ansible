@@ -88,5 +88,5 @@
       register: SHELL_OUTPUT
 
     - name: print output
-      ansible.builtin.shell:
+      ansible.builtin.debug:
         msg: "{{SHELL_OUTPUT}}"
