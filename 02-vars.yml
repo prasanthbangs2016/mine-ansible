@@ -1,61 +1,79 @@
-- name: Demo on Playbook level variables
+# - name: Demo on Playbook level variables
+#   hosts: all
+#   vars:
+#     #var: value
+#     URL: play.example.com
+#   tasks:
+#     - name: Print URL
+#       ansible.builtin.debug:
+#         msg: URL == {{ URL }}
+
+# # Note: variables of one play cannot be accessed other play(by defaul)
+
+# - name: Demo on Playbook variable file
+# #we can have list of variables in a file and load that file
+#   hosts: all
+#   vars_files:
+#     - 02-01-var.yml
+#   tasks:
+#     - name: Print URL
+#       ansible.builtin.debug:
+#         msg: URL == {{ URL }}
+
+# - name: Declaring variables at task level
+#   hosts: all
+#   tasks:
+#     - name: print URL
+#       ansible.builtin.debug:
+#         msg: URL == {{ URL }}
+#       vars:
+#         #var: value
+#         URL: task.example.com
+# #note: task level variables are limited only to that particular task
+
+# - name: Read the variable from inventory file
+#   hosts: all
+#   tasks:
+#     - name: print URL
+#       ansible.builtin.debug:
+#         msg: URL == {{ URL }}
+
+# - name: Read the variable from CLI
+#   hosts: all
+#   tasks:
+#     - name: print URL
+#       ansible.builtin.debug:
+#         msg: URL == {{ URL }}
+# #ansible-playbook -i inv -u centos -k -e URL=cli.example.com 02-vars.yml
+# #or
+# #ansible-playbook -i inv -e ansible_user=centos -e ansible_password=DevOps321 02-vars.yml
+# #Here password appears hence k option given
+# #note: CLI variable has 1st precedence for playbook
+
+# - name: Read the variable from ROLES
+#   hosts: all
+#   roles:
+#     - 1-sample
+
+# #https://docs.ansible.com/ansible/latest/user_guide/playbooks_vars_facts.html
+# - name: Print Facts
+#   hosts: all
+#   tasks:
+#     - name: Print hostname using facts
+#       ansible.builtin.debug:
+#         msg: Hostname == {{ ansible_hostname }}
+
+# - name: Print Facts
+#   hosts: all
+#   tasks:
+#     - name: Print hostname using facts
+#       ansible.builtin.debug:
+#         msg: Hostname == {{ ansible_hostname }}
+
+#https://docs.ansible.com/ansible/latest/collections/ansible/builtin/shell_module.html
+- name: Demo on Register
   hosts: all
-  vars:
-    #var: value
-    URL: play.example.com
   tasks:
-    - name: Print URL
-      ansible.builtin.debug:
-        msg: URL == {{ URL }}
+    - name: Print/get uptime
+      ansible.builtin.shell: uptime
 
-# Note: variables of one play cannot be accessed other play(by defaul)
-
-- name: Demo on Playbook variable file
-#we can have list of variables in a file and load that file
-  hosts: all
-  vars_files:
-    - 02-01-var.yml
-  tasks:
-    - name: Print URL
-      ansible.builtin.debug:
-        msg: URL == {{ URL }}
-
-- name: Declaring variables at task level
-  hosts: all
-  tasks:
-    - name: print URL
-      ansible.builtin.debug:
-        msg: URL == {{ URL }}
-      vars:
-        #var: value
-        URL: task.example.com
-#note: task level variables are limited only to that particular task
-
-- name: Read the variable from inventory file
-  hosts: all
-  tasks:
-    - name: print URL
-      ansible.builtin.debug:
-        msg: URL == {{ URL }}
-
-- name: Read the variable from CLI
-  hosts: all
-  tasks:
-    - name: print URL
-      ansible.builtin.debug:
-        msg: URL == {{ URL }}
-#ansible-playbook -i inv -u centos -k -e URL=cli.example.com 02-vars.yml
-#note: CLI variable has 1st precedence for playbook
-
-- name: Read the variable from ROLES
-  hosts: all
-  roles:
-    - 1-sample
-
-#https://docs.ansible.com/ansible/latest/user_guide/playbooks_vars_facts.html
-- name: Print Facts
-  hosts: all
-  tasks:
-    - name: Print hostname using facts
-      ansible.builtin.debug:
-        msg: Hostname == {{ ansible_hostname }}
