@@ -49,5 +49,5 @@
 
 - name: Read the variable from ROLES
   hosts: all
-  role:
+  roles:
     - sample
