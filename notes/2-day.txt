@@ -1,0 +1,2 @@
+ansible-pull -i localhost, -U https://github.com/prasanthbangs2016/mine-ansible.git 1-sample.yml
+
