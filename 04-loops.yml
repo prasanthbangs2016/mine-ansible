@@ -1,5 +1,5 @@
 #loops is to iterate a more no of tasks
-
+#simple loop
 - name: Demo on loop
   hosts: all
   tasks:
@@ -9,3 +9,25 @@
       loop:
         - banana
         - apple
+
+
+# output
+
+# ok: [172.31.12.127] => (item=banana) => {
+#     "msg": "fruit name = banana"
+# }
+# ok: [172.31.12.127] => (item=apple) => {
+#     "msg": "fruit name = apple"
+# }
+
+#map loop
+#===========
+- name: Demo on loop
+  hosts: all
+  tasks:
+    - name: Fruit name
+      ansible.builtin.debug:
+        msg: fruit name = {{ item.name }},Quantity = {{ item.qty }}
+      loop:
+        - { name: banana, qty: 100 }
+        - { name: apple, qty: 200 }
