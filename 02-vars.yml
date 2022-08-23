@@ -95,6 +95,6 @@
       ansible.builtin.debug:
         msg: "{{SHELL_OUTPUT.stdout}}"
 
-    - name: print output
+    - name: declare a variable
       ansible.builtin.set_fact:
         UPTIME: "{{SHELL_OUTPUT.stdout}}"
