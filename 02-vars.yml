@@ -13,7 +13,8 @@
 - name: Demo on Playbook variable file
 #we can have list of variables in a file and load that file
   hosts: all
-  vars_files: 02-01-var.yml
+  vars_files:
+    - 02-01-var.yml
   tasks:
     - name: Print URL
       ansible.builtin.debug:
