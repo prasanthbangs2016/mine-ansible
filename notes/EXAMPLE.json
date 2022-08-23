@@ -1,0 +1,10 @@
+{
+    "TrainerName" : "Raghu",
+    "CourseName" : "devops",
+    "TIming" : "6AM",
+    "PHNO" : [123,456],
+    "Content" : {
+        "devops" : ["ansible","docker","jenkins","shell"],
+        "aws" : ["ec2","r53"]
+    }
+}

@@ -50,4 +50,12 @@
 - name: Read the variable from ROLES
   hosts: all
   roles:
-    - sample
+    - 1-sample
+
+#https://docs.ansible.com/ansible/latest/user_guide/playbooks_vars_facts.html
+- name: Print Facts
+  hosts: all
+  tasks:
+    - name: Print hostname using facts
+      ansible.builtin.debug:
+        msg: Hostname == {{ ansible_hostname }}

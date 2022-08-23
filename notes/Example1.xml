@@ -1,0 +1,18 @@
+<TrainerName>"Raghu"</TrainerName>
+<CourseName>"Devops"</ourseName>
+<Timings>6AM</Timings>
+<contact Nos>
+    123,
+    456
+</contact Nos>
+<content>
+    <devops>
+        "ansible",
+        "shell",
+        "jenkins"
+    </devops>
+    <aws>
+        "ec2",
+        "r53"
+    </aws>
+</content>

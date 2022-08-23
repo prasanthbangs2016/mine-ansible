@@ -1,0 +1,23 @@
+Q-ansible variable precedence..?
+
+play level(4th precedence),
+variable from a file(3rd precedence),
+task level(2nd precedence),
+inventory(5th precedence), 
+cli level(1st precedence)
+
+Q-Role..?
+group of tasks
+
+structure
+role/
+    common/
+        tasks/
+            main.yml
+        handlers/
+            main.yml
+        files/
+            main.yml
+        vars/
+            main.yml
+        
