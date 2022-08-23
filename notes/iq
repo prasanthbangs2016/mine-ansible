@@ -59,5 +59,20 @@ if you want to define variable between the task that is possible using "set_fact
     #     ansible.builtin.set_fact:
     #       UPTIME: "{{SHELL_OUTPUT.stdout}}"
 
+Q-conditions
+
+- name: Demo on conditions
+  hosts: all
+  tasks:
+    - name: Run if it is redhat family
+      ansible.builtin.debug:
+        msg: Hello Redhat
+      when: ansible_os_family == "RedHat"
+
+    - name: Run if it is debain family
+      ansible.builtin.debug:
+        msg: Hello Debian
+      when: ansible_os_family == "Debain"
+
 
         
