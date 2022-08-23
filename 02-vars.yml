@@ -1,6 +1,7 @@
 - name: Demo on Playbook level variables
   hosts: all
   vars:
+    #var: value
     URL: play.example.com
   tasks:
     - name: Print URL
@@ -8,3 +9,9 @@
         msg: URL == {{ URL }}
 
 # Note: variables of one play cannot be accessed other play(by defaul)
+
+- name: Demo on Playbook variable file
+#we can have list of variables in a file and load that file
+  hosts: all
+  vars_files:
+    - 02-01-var.yml
