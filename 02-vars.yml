@@ -77,3 +77,16 @@
     - name: Print/get uptime
       ansible.builtin.shell: uptime
 
+#ansible-playbook -i inv -e ansible_user=centos -e ansible_password=DevOps321 02-vars.yml
+#it will run the command it will not display the output hence we will use variable
+
+- name: Demo on Register
+  hosts: all
+  tasks:
+    - name: Print/get uptime
+      ansible.builtin.shell: uptime
+      register: SHELL_OUTPUT
+
+    - name: print output
+      ansible.builtin.shell:
+      msg: "{{ SHELL_OUTPUT }}"

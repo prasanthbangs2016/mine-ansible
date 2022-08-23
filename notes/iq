@@ -7,6 +7,7 @@ inventory(5th precedence),
 cli level(1st precedence)
 
 Q-Role..?
+this is function in other programs.
 group of tasks
 
 structure
@@ -20,4 +21,36 @@ role/
             main.yml
         vars/
             main.yml
+
+Q- facts?
+these are predefined variables
+
+Q-Runtime variables
+during the runtime you run a task u get the output that output we will be using it somewhere using "register" variable.
+
+if you want to define variable between the task that is possible using "set_fact".
+
+# #https://docs.ansible.com/ansible/latest/collections/ansible/builtin/shell_module.html
+# - name: Demo on Register
+#   hosts: all
+#   tasks:
+#     - name: Print/get uptime
+#       ansible.builtin.shell: uptime
+
+#ansible-playbook -i inv -e ansible_user=centos -e ansible_password=DevOps321 02-vars.yml
+
+#it will run the command it will not display the output hence we will use variable
+
+# - name: Demo on Register
+#   hosts: all
+#   tasks:
+#     - name: Print/get uptime
+#       ansible.builtin.shell: uptime
+#       register: SHELL_OUTPUT
+
+#     - name: print output
+#       ansible.builtin.shell:
+#       msg: "{{ SHELL_OUTPUT }}"
+
+
         
