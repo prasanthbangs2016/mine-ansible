@@ -94,3 +94,7 @@
     - name: print output
       ansible.builtin.debug:
         msg: "{{SHELL_OUTPUT.stdout}}"
+
+    - name: print output
+      ansible.builtin.debug:
+        UPTIME: "{{SHELL_OUTPUT.stdout}}"
