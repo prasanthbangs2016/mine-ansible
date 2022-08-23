@@ -55,6 +55,9 @@ if you want to define variable between the task that is possible using "set_fact
     #   - name: print output
     #     ansible.builtin.debug:
     #       msg: "{{SHELL_OUTPUT.stdout}}"
+    #   - name: print output
+    #     ansible.builtin.set_fact:
+    #       UPTIME: "{{SHELL_OUTPUT.stdout}}"
 
 
         
