@@ -89,4 +89,4 @@
 
     - name: print output
       ansible.builtin.shell:
-      msg: "{{ SHELL_OUTPUT }}"
+        msg: "{{SHELL_OUTPUT}}"
