@@ -37,3 +37,11 @@
     - name: print URL
       ansible.builtin.debug:
         msg: URL == {{ URL }}
+
+- name: Read the variable from CLI
+  hosts: all
+  tasks:
+    - name: print URL
+      ansible.builtin.debug:
+        msg: URL == {{ URL }}
+#ansible-playbook -i inv -u centos -k -e URL=cli.example.com 02-vars.yml
