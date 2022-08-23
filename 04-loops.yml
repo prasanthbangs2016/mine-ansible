@@ -1,0 +1,11 @@
+#loops is to iterate a more no of tasks
+
+- name: Demo on loop
+  hosts: all
+  tasks:
+    - name: Fruit name
+      ansible.builtin.debug:
+        msg: fruit name = {{ item }}
+      loop:
+        - banana
+        - apple
