@@ -19,3 +19,13 @@
     - name: Print URL
       ansible.builtin.debug:
         msg: URL == {{ URL }}
+
+- name: Declaring variables at task level
+  hosts: all
+  tasks:
+    - name: print URL
+      ansible.builtin.debug:
+        msg: URL == {{ URL }}
+      vars:
+        #var: value
+        URL: task.example.com
